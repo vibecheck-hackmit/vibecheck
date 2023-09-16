@@ -1,0 +1,9 @@
+name: hackmit
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.10
+  - numpy=1.25.2
+  - fastapi=0.103.1
+  - spotipy=2.23.0
