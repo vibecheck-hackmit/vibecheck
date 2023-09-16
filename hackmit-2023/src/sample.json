@@ -1,0 +1,72 @@
+[
+        {
+            "track_name": "Death By A Thousand Cuts - Live From Paris",
+            "artist_name": "Taylor Swift",
+            "danceability": 0.584,
+            "energy": 0.655,
+            "valence": 0.604
+        },
+        {
+            "track_name": "Ode to a Conversation Stuck in Your Throat",
+            "artist_name": "Del Water Gap",
+            "danceability": 0.57,
+            "energy": 0.804,
+            "valence": 0.624
+        },
+        {
+            "track_name": "Not Another Rockstar",
+            "artist_name": "Maisie Peters",
+            "danceability": 0.658,
+            "energy": 0.815,
+            "valence": 0.818
+        },
+        {
+            "track_name": "Evergreen",
+            "artist_name": "Richy Mitch & The Coal Miners",
+            "danceability": 0.555,
+            "energy": 0.216,
+            "valence": 0.504
+        },
+        {
+            "track_name": "Death By A Thousand Cuts",
+            "artist_name": "Taylor Swift",
+            "danceability": 0.712,
+            "energy": 0.732,
+            "valence": 0.313
+        },
+        {
+            "track_name": "West Coast",
+            "artist_name": "Lana Del Rey",
+            "danceability": 0.527,
+            "energy": 0.591,
+            "valence": 0.461
+        },
+        {
+            "track_name": "get him back!",
+            "artist_name": "Olivia Rodrigo",
+            "danceability": 0.546,
+            "energy": 0.846,
+            "valence": 0.74
+        },
+        {
+            "track_name": "More Than a Friend",
+            "artist_name": "girli",
+            "danceability": 0.689,
+            "energy": 0.594,
+            "valence": 0.653
+        },
+        {
+            "track_name": "Lost The Breakup",
+            "artist_name": "Maisie Peters",
+            "danceability": 0.6,
+            "energy": 0.889,
+            "valence": 0.677
+        },
+        {
+            "track_name": "Strangers",
+            "artist_name": "Kenya Grace",
+            "danceability": 0.628,
+            "energy": 0.523,
+            "valence": 0.416
+        }
+    ]
