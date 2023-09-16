@@ -46,7 +46,7 @@ def categorize():
         print(prod,vec,index)
         if prod < cur_max[0]:
             cur_max = (prod,vec,index)
-    return cur_max
+    return cur_max[2]
 if __name__ == '__main__':
     for x in sp.get_top_tracks_features():
         print(x)
