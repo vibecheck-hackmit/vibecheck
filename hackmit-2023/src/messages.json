@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "color": "#FFD700",
+    "mood": "Exhilarated Joy",
+    "message": "Ride the wave of positivity. The world is your playground!"
+  },
+  {
+    "id": 1,
+    "color": "#CD5C5C",
+    "mood": "Passionate Drive",
+    "message": "Embrace the intensity. Your fire will pave the way!"
+  },
+  {
+    "id": 2,
+    "color": "#FFE4E1",
+    "mood": "Pensive Solitude",
+    "message": "Cherish the quiet moments. They nourish the soul."
+  },
+  {
+    "id": 3,
+    "color": "#BC8F8F",
+    "mood": "Focused Determination",
+    "message": "Channel your energy. Each challenge brings growth."
+  },
+  {
+    "id": 4,
+    "color": "#D8BFD8",
+    "mood": "Gentle Elation",
+    "message": "Find joy in the gentle rhythms of life."
+  },
+  {
+    "id": 5,
+    "color": "#E6E6FA",
+    "mood": "Calm Contentment",
+    "message": "In stillness, there's beauty. Savor the contentment."
+  },
+  {
+    "id": 6,
+    "color": "#C9AA88",
+    "mood": "Grounded Equilibrium",
+    "message": "Stay centered. Balance is the essence of well-being."
+  },
+  {
+    "id": 7,
+    "color": "#6495ED",
+    "mood": "Whimsical Melancholy",
+    "message": "Find beauty in contrasts. Dance through the blues."
+  },
+  {
+    "id": 8,
+    "color": "#FA8072",
+    "mood": "Vigorous Ambivalence",
+    "message": "Harness the contrasts. They give depth to your journey."
+  },
+  {
+    "id": 9,
+    "color": "#B7C9E2",
+    "mood": "Serene Positivity",
+    "message": "Peaceful yet hopeful. Embrace the light within."
+  }
+]
