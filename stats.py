@@ -9,16 +9,16 @@ import typing as ty
 import math
 
 def basis_mood_vecs() -> ty.Tuple[np.array]:
-    return (np.array([x/math.sqrt(3) for x in [1,1,1]])
-           ,np.array([x/math.sqrt(2) for x in [1,1,0]])
-           ,np.array([x/math.sqrt(2) for x in [0.1,0.1,0.1]]) #dont want zero vec
+    return (np.array([1,1,1])
+           ,np.array([1,1,0])
+           ,np.array([0.1,0.1,0.1]) #dont want zero vec
            ,np.array([0,1,0])
-           ,np.array([x/math.sqrt(2) for x in [1,0,1]])
+           ,np.array([1,0,1])
            ,np.array([0,0,1])
-           ,np.array([x/math.sqrt(1.5) for x in [0.5,0.5,0.5]])
-           ,np.array([x/math.sqrt(1.5) for x in [1,0.5,0]])
-           ,np.array([x/math.sqrt(2) for x in [0.5,1,0.5]])
-           ,np.array([x/math.sqrt(1.5) for x in [0,0.5,1]])
+           ,np.array([0.5,0.5,0.5])
+           ,np.array([1,0.5,0])
+           ,np.array([0.5,1,0.5])
+           ,np.array([0,0.5,1])
            )
 
 
@@ -38,11 +38,13 @@ def get_avg_mood_vec() -> np.array:
 
 def categorize():
     avgs = get_avg_mood_vec()
-    cur_max = (0,0,0)
+    #avgs = np.array([0.1,0.1,0.1]) #dont want zero vec
+    print(avgs)
+    cur_max = (float('inf'),0,0)
     for index,vec in enumerate(basis_mood_vecs()):
-        prod = np.dot(avgs,vec)
+        prod = math.sqrt( (avgs[0]-vec[0])**2 + (avgs[1]-vec[1])**2 + (avgs[2]-vec[2])**2)
         print(prod,vec,index)
-        if prod > cur_max[0]:
+        if prod < cur_max[0]:
             cur_max = (prod,vec,index)
     return cur_max
 if __name__ == '__main__':
