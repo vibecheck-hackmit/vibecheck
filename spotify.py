@@ -3,16 +3,16 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 class Track: 
-    def __init__(self, track_name, artist_name, danceability, energy, valence, key):
+    def __init__(self, track_name, artist_name, danceability, energy, valence, mode):
         self.track_name = track_name
         self.artist_name = artist_name
         self.danceability = danceability
         self.energy = energy
         self.valence = valence
-        self.key = key
+        self.mode = mode
 
     def __repr__(self):
-        return f"Track(name={self.track_name}, artist={self.artist_name}, danceability={self.danceability}, energy={self.energy}, valence={self.valence}, key={self.key})"
+        return f"Track(name={self.track_name}, artist={self.artist_name}, danceability={self.danceability}, energy={self.energy}, valence={self.valence}, mode={self.mode})"
 
 def get_top_tracks_features():
     with open('.creds/spotify.json', 'r') as f:
@@ -36,9 +36,9 @@ def get_top_tracks_features():
         danceability = feature['danceability']
         energy = feature['energy']
         valence = feature['valence']
-        key = feature['key']
+        mode = feature['mode']
         
-        track_obj = Track(track_name, artist_name, danceability, energy, valence, key)
+        track_obj = Track(track_name, artist_name, danceability, energy, valence, mode)
         tracks_info.append(track_obj)
 
     return tracks_info
