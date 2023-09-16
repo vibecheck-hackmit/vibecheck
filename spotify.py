@@ -1,5 +1,6 @@
 import json
 import spotipy
+import numpy as np
 from spotipy.oauth2 import SpotifyOAuth
 
 def get_top_tracks_features():
@@ -36,12 +37,13 @@ def get_top_tracks_features():
         energy = feature['energy']
         valence = feature['valence']
         
-        tracks_info.append((track_name, artist_name, danceability, energy, valence))
+        tracks_info.append([track_name, artist_name, danceability, energy, valence])
 
     # Close the Spotify session
     sp = None
-    
-    return tracks_info
+
+    # Convert to numpy array and return
+    return np.array(tracks_info, dtype=object)
 
 tracks_data = get_top_tracks_features()
 for idx, track in enumerate(tracks_data):
