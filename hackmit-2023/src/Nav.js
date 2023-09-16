@@ -5,7 +5,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="navbar" id="nav">
-        <p>logout or smth</p>
+        <p>Logout</p>
       </div>
     )
   }
