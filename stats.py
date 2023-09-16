@@ -2,11 +2,13 @@ import numpy as np
 #using: array
 
 import spotify as sp
-#using: 
+#using: get_top_tracks_features
 
 import typing as ty
+#Tuple
 
 import math
+#sqrt
 
 def category_vecs() -> ty.Tuple[np.array]:
     """vectors that represent categories of moods."""
