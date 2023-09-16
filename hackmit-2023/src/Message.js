@@ -1,11 +1,14 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import './App.css';
 
 function Message(props) {
   return (
-    <div className="message-container" id="message">
-      <h1>{props.message}</h1>
-    </div>
+    <Fade big cascade>
+      <div className="message-container" id="message">
+        <h1>{props.message}</h1>
+      </div>
+    </Fade>
   )
 }
 
