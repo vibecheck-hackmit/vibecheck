@@ -4,8 +4,8 @@ import numpy as np
 from spotipy.oauth2 import SpotifyOAuth
 
 def get_top_tracks_features():
-    # Load client ID and secret from .creds file
-    with open('.creds', 'r') as f:
+    # Load client ID and secret from .creds/spotify.json file
+    with open('.creds/spotify.json', 'r') as f:
         creds = json.load(f)
         CLIENT_ID = creds['CLIENT_ID']
         CLIENT_SECRET = creds['CLIENT_SECRET']
