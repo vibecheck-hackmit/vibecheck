@@ -6,51 +6,37 @@ import Stats from './Stats.js';
 
 import messages from './messages.json'
 
+const CategoryContext = React.createContext({
+  category: 0, fetchCategory: () => {}
+})
 
 function App() {
-  const [categorizeResult, setCategorizeResult] = useState(null);
+  const [category, setCategory] = useState([])
+  const fetchCategory = async () => {
+    const response = await fetch("http://localhost:8000/mood-message/")
+    const category = await response.json()
+    setCategory(category.closest_match)
+  }
+  useEffect(() => {
+    fetchCategory()
+  }, [])
 
-useEffect(() => {
-  fetch('../stats.py/categorize', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({}),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const categorizeResult = data.result;
-      console.log('Categorize Result:', categorizeResult);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const result = data.result;
-      setCategorizeResult(result);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-// }, []);
-
-
-
-  const messageId = {categorizeResult};
+  const messageId = category;
   const message = messages.find(item => item.id === messageId).message;
   const color = messages.find(item => item.id === messageId).color;
 
   return (
-    <div className="site-container" style={{backgroundColor: color}}>
-      <Nav />
-      <div className="content-container">
-        <Message message={message} />
-        <Stats />
+    <CategoryContext.Provider value={{category, fetchCategory}}>
+      <div className="site-container" style={{backgroundColor: color}}>
+        <Nav />
+        <div className="content-container">
+          <Message message={message} />
+          <Stats />
+        </div>
       </div>
-    </div>
+    </CategoryContext.Provider>
+
+    
   );
 }
 
