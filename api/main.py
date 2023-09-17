@@ -12,18 +12,7 @@ def read_root():
 @app.get("/mood-message/")
 def get_top_tracks_mood():
     try:
-        # Fetch the top tracks
-        tracks = spotify.get_top_tracks_features()
-        avg_mood_vector = stats.get_avg_mood_vec()
-
-        # Categorize the tracks based on the mood
-        category, message = stats.categorize(avg_mood_vector, tracks)
-
-        return {
-            "category": category,
-            "message": message,
-            "tracks": tracks  
-        }
+        return {"closest_match": stats.categorize()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
