@@ -1,0 +1,16 @@
+services:
+  frontend:
+    image: vibecheck/frontend
+    build: 
+      dockerfile: build/frontend.dockerfile
+    ports:
+      - 3000:3000
+    working_dir: /app
+
+  api:
+    image: vibecheck/api
+    build: 
+      dockerfile: build/api.dockerfile
+    ports:
+      - 8000:8000
+    working_dir: /app
