@@ -57,5 +57,5 @@ def categorize() -> int:
     return closest_match
 
 if __name__ == '__main__':
-    print(categorize()) 
+    print(categorize())
 
