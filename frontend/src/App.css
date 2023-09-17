@@ -18,9 +18,11 @@ html {
 h1 {
   font: bold 6rem/7rem Inter;
   text-align: center;
+  margin: 0;
 }
 h2 {
   font: bold 5rem Inter;
+  text-align: center;
 }
 h3 {
   font: 3rem Inter;
@@ -47,6 +49,7 @@ p {
 }
 .message-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
