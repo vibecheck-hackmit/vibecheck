@@ -15,28 +15,30 @@ function App() {
   const fetchCategory = async () => {
     const response = await fetch("http://localhost:8000/mood-message/")
     const category = await response.json()
-    setCategory(category.closest_match)
+    setCategory(category)
   }
   useEffect(() => {
     fetchCategory()
   }, [])
 
-  const messageId = category;
-  const message = messages.find(item => item.id === messageId).message;
-  const color = messages.find(item => item.id === messageId).color;
+  console.log(category);
+  // const vibeMessage = messages.find(item => item.id === 2).message;
+  // const vibeMood = messages.find(item => item.id === 2).mood;
+  // const vibeColor = messages.find(item => item.id === 2).color;
+  const vibeMessage = messages.find(item => item.id === category.closest_match).message;
+  const vibeMood = messages.find(item => item.id === category.closest_match).mood;
+  const vibeColor = messages.find(item => item.id === category.closest_match).color;
 
   return (
     <CategoryContext.Provider value={{category, fetchCategory}}>
-      <div className="site-container" style={{backgroundColor: color}}>
+      <div className="site-container" style={{backgroundColor: vibeColor}}>
         <Nav />
         <div className="content-container">
-          <Message message={message} />
+          <Message message={vibeMessage} mood={vibeMood} />
           <Stats />
         </div>
       </div>
     </CategoryContext.Provider>
-
-    
   );
 }
 
