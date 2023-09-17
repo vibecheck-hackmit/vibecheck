@@ -15,17 +15,16 @@ and put them in a `.creds/spotify.json` file as follows,
 }
 ```
 Next, from inside the `api` directory, run the following in a python interactive terminal.
-```
-    with open('.creds/spotify.json', 'r') as f:
-        creds = json.load(f)
-        
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-        client_id=creds['CLIENT_ID'],
-        client_secret=creds['CLIENT_SECRET'],
-        redirect_uri="http://localhost:8888/callback", 
-        scope=["user-top-read"]
-    ))
-
+```py
+with open('.creds/spotify.json', 'r') as f:
+    creds = json.load(f)
+    
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+    client_id=creds['CLIENT_ID'],
+    client_secret=creds['CLIENT_SECRET'],
+    redirect_uri="http://localhost:8888/callback", 
+    scope=["user-top-read"]
+))
 
 ```
 Finally, you can launch the site using `docker` by the following sequence of commands,
